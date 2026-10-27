@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="拾词词义挑战：随机抽取 10 个词，从四个释义中选出最接近的一个，即时看到解析和错题回顾。">
+  <title>词义挑战 · 拾词</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23e77756'/%3E%3Cpath d='M14 14.5c5.8 0 9.2 2.5 9.2 8V34c-2-2.7-4.8-4.1-9.2-4.1V14.5Z' fill='%23f7f1e3'/%3E%3Cpath d='M34 14.5c-5.8 0-9.2 2.5-9.2 8V34c2-2.7 4.8-4.1 9.2-4.1V14.5Z' fill='%23f7f1e3' opacity='.85'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="quiz">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="拾词首页">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <rect width="48" height="48" rx="15" fill="#e77756"></rect>
+            <path d="M14 14.5c5.8 0 9.2 2.5 9.2 8V34c-2-2.7-4.8-4.1-9.2-4.1V14.5Z" fill="#f7f1e3"></path>
+            <path d="M34 14.5c-5.8 0-9.2 2.5-9.2 8V34c2-2.7 4.8-4.1 9.2-4.1V14.5Z" fill="#f7f1e3" opacity=".85"></path>
+            <path d="M24 22.5V34" stroke="#173b32" stroke-width="1.4" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <strong>拾词</strong>
+          <small>SHICI VOCABULARY</small>
+        </span>
+      </a>
+
+      <p class="nav-label">学习空间</p>
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-item" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#i-sun"></use></svg>
+          <span>今日学习</span>
+          <i class="nav-item__dot" aria-hidden="true"></i>
+        </a>
+        <a class="nav-item" href="library.html">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#i-book"></use></svg>
+          <span>我的词库</span>
+          <i class="nav-item__dot" aria-hidden="true"></i>
+        </a>
+        <a class="nav-item is-active" href="quiz.html" aria-current="page">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#i-spark"></use></svg>
+          <span>词义挑战</span>
+          <i class="nav-item__dot" aria-hidden="true"></i>
+        </a>
+        <a class="nav-item" href="stats.html">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#i-chart"></use></svg>
+          <span>学习统计</span>
+          <i class="nav-item__dot" aria-hidden="true"></i>
+        </a>
+        <a class="nav-item" href="about.html">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#i-lightbulb"></use></svg>
+          <span>学习方法</span>
+          <i class="nav-item__dot" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar__spacer"></div>
+
+      <div class="streak-card">
+        <div class="streak-card__head">
+          <span class="streak-card__flame"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-flame"></use></svg></span>
+          <span>连续学习</span>
+        </div>
+        <p class="streak-card__number"><strong data-streak>0</strong><span>天</span></p>
+        <div class="streak-dots" id="sidebarWeekDots" aria-hidden="true"></div>
+        <p class="streak-card__note" data-streak-note>今天开始，记录会被点亮。</p>
+      </div>
+
+      <p class="sidebar__foot">每天拾起一点，<br>语言自成风景。</p>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <header class="topbar">
+        <a class="mobile-brand" href="index.html" aria-label="拾词首页">
+          <span class="mobile-brand__mark" aria-hidden="true">拾</span>
+          <strong>拾词</strong>
+        </a>
+        <nav class="crumb" aria-label="面包屑">
+          <span>学习空间</span>
+          <i aria-hidden="true">/</i>
+          <strong>词义挑战</strong>
+        </nav>
+        <div class="topbar__right">
+          <span class="streak-pill">
+            <svg class="icon" aria-hidden="true"><use href="icons.svg#i-flame"></use></svg>
+            <span>连续 <strong data-streak>0</strong> 天</span>
+          </span>
+          <span class="date-pill" id="topbarDate">今天 · 记录中</span>
+          <span class="avatar" aria-hidden="true">拾</span>
+        </div>
+      </header>
+
+      <div class="main__inner">
+        <div class="page-head">
+          <div class="page-head__copy">
+            <p class="eyebrow">QUICK CHECK <i></i></p>
+            <h1>词义挑战</h1>
+            <p class="page-head__sub">随机抽 10 个词，从四个释义里选出最接近的一个。答错不扣分，每一次选择都会让记忆更清楚一点。</p>
+          </div>
+          <span class="paper-tag">10 QUESTIONS</span>
+        </div>
+
+        <div id="quizLanding" aria-live="polite"></div>
+        <div id="quizRoot" hidden></div>
+
+        <footer class="site-footer">
+          <p><strong>拾词</strong> · 每天拾起一点，语言自成风景。</p>
+          <nav aria-label="辅助导航">
+            <a href="about.html">学习方法</a>
+            <a href="https://github.com/hyh061/shici">GitHub</a>
+          </nav>
+          <p class="site-footer__note">学习记录仅保存在当前浏览器。</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="word-dialog" id="wordDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="关闭详情">
+        <svg class="icon" aria-hidden="true"><use href="icons.svg#i-x"></use></svg>
+      </button>
+      <div id="dialogContent"></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="sr-only" id="liveRegion" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">拾词需要启用 JavaScript 才能开始词义挑战。</div>
+  </noscript>
+
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
