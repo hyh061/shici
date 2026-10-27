@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.dsh-pilot/
+.upload/
+.deploy-key/
+.tmp-*
+*.log
+.DS_Store
+Thumbs.db
