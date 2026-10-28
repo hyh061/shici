@@ -2,6 +2,19 @@
 
 一个安静、专注的背单词网站。纯 HTML / CSS / JavaScript 实现，没有构建步骤，也没有后端。
 
+**在线站点：** <https://hyh061.github.io/shici/>  
+**代码仓库：** <https://github.com/hyh061/shici>  
+**项目标题：** 拾词 · 每天拾起一点  
+**一句话简介：** 240 个精选词、12 个场景词包，用回忆、挑战和统计，把词汇真正变成自己的。
+
+![拾词项目封面](assets/cover.png)
+
+## 预览
+
+![桌面端首页](desktop.png)
+
+![移动端首页](mobile.jpg)
+
 ## 五个页面
 
 | 页面 | 地址 | 内容 |
@@ -52,8 +65,28 @@ python -m http.server 4173
 | `styles.css` | 视觉系统与响应式样式 |
 | `app.js` | 五个页面的学习、测试、统计与本地存储逻辑 |
 | `data.js` | 240 个单词与 12 个主题的数据 |
+| `manifest.webmanifest` | PWA 名称、图标、主题色与快捷入口 |
+| `favicon.svg` / `favicon.ico` | 浏览器标签页图标 |
+| `assets/cover.png` | 项目封面，同时用于 Open Graph / Twitter 分享卡 |
+| `assets/app-icon.png` | 1024 px 应用图标母版 |
+| `assets/icon-512.png` / `icon-192.png` | PWA 图标 |
+| `assets/apple-touch-icon.png` | iOS 主屏图标 |
 
 > 掌握规则：同一个词在学习和测试中累计答对两次后，状态会变为「已掌握」。可在词库详情中手动调整。
+
+## 元数据与图标
+
+- 每页都有独立的 `<title>`、`description`、`canonical` 与 Open Graph / Twitter 分享信息。
+- 首页额外提供 `WebApplication` 结构化数据，便于搜索引擎理解这是一个免费的教育类 Web 应用。
+- `manifest.webmanifest` 让站点可以“添加到主屏幕”，并使用拾词自己的珊瑚色与森林色。
+- 分享封面统一为 `assets/cover.png`（1200 × 630）。
+
+## 编辑
+
+- 在 GitHub 打开任意文件，点击右上角铅笔图标即可在线编辑；保存时写清提交说明。
+- 快速入口：<https://github.com/hyh061/shici/edit/main/index.html>
+- 替换封面或图标时，把新文件放进 `assets/`，保持文件名不变即可同时更新站点与分享卡。
+- 修改 `README.md` 可直接更新仓库首页展示的项目说明。
 
 ## 部署
 
